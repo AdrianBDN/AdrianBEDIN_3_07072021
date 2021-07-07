@@ -1,4 +1,4 @@
-OpenClassrooms Projet 3
+# OpenClassrooms Projet 3
 
 Intégration d'une maquette en HTML/SCSS + animations.
 
