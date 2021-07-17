@@ -89,6 +89,7 @@ header a h1 {
   display: block;
   font-size: 25px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 .usage__content .usage__steps {
   display: flex;
@@ -122,6 +123,73 @@ header a h1 {
 .usage__content .usage__steps-style h3 {
   font-size: 18px;
   font-weight: 500;
+}
+
+.restaurants {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 30px;
+}
+.restaurants__title {
+  font-size: 25px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.restaurants__cards a {
+  text-decoration: none;
+  color: black;
+}
+.restaurants__cards a .restaurant__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+.restaurants__cards a .restaurant__card-image {
+  width: 100%;
+  height: 200px;
+}
+.restaurants__cards a .restaurant__card-image > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #99E2D0;
+  color: #1b6150;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.restaurants__cards a .restaurant__card-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.restaurants__cards a .restaurant__card .restaurant__block {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+}
+.restaurants__cards a .restaurant__card .restaurant__block-info {
+  font-size: 18px;
+}
+.restaurants__cards a .restaurant__card .restaurant__block-name {
+  font-weight: 700;
 }
 
 footer {
