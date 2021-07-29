@@ -9,6 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/*------------ HEADER ---------*/
 .header {
   height: 70px;
 }
@@ -24,6 +25,7 @@ body {
   padding-top: 15px;
 }
 
+/*----------- SEARCH SECTION --------- */
 .location {
   background: #eaeaea;
   height: 50px;
@@ -67,9 +69,12 @@ body {
   border: none;
   border-radius: 50px;
   font-size: 18px;
-  color: white;
   margin: 10px 0;
   cursor: pointer;
+}
+.search__container button a {
+  text-decoration: none;
+  color: white;
 }
 
 .usage__content {
@@ -82,6 +87,7 @@ body {
 }
 .usage__content .usage {
   width: 95%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
 }
@@ -96,6 +102,11 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .usage__content .usage__steps {
+    flex-direction: row;
+  }
+}
 .usage__content .usage__steps-style {
   display: flex;
   background: #f6f6f6;
@@ -106,6 +117,12 @@ body {
   border-radius: 25px;
   position: relative;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+}
+@media screen and (min-width: 768px) {
+  .usage__content .usage__steps-style {
+    width: 100%;
+    margin: 10px;
+  }
 }
 .usage__content .usage__steps-style p {
   background: #9356DC;
@@ -125,6 +142,7 @@ body {
   font-weight: 500;
 }
 
+/*---------- RESTAURANTS SECTION --------*/
 .restaurants {
   display: flex;
   justify-content: center;
@@ -136,6 +154,19 @@ body {
   display: block;
   font-weight: bold;
   margin-bottom: 20px;
+}
+.restaurants__cards {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .restaurants__cards {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .restaurants__cards a {
   text-decoration: none;
@@ -192,32 +223,7 @@ body {
   font-weight: 700;
 }
 
-footer {
-  background-color: #353535;
-  color: white;
-  padding: 0 40px 20px;
-}
-footer h3 {
-  font-family: "Shrikhand", cursive;
-  font-weight: lighter;
-  font-size: 20px;
-  padding: 15px 0;
-}
-footer ul {
-  list-style-type: none;
-}
-footer ul li {
-  padding: 5px 0;
-}
-footer ul li a {
-  text-decoration: none;
-  color: #F3F3F3;
-}
-footer ul li a .fas {
-  font-size: 15px;
-  padding-right: 5px;
-}
-
+/*---------- RESTAURANTS PAGES-------- */
 .restaurants {
   background: #F3F3F3;
 }
@@ -273,6 +279,7 @@ footer ul li a .fas {
 }
 .menu__template {
   width: 100%;
+  max-width: 1200px;
 }
 .menu__template-header {
   display: flex;
@@ -292,6 +299,13 @@ footer ul li a .fas {
   display: grid;
   grid-gap: 40px;
 }
+@media screen and (min-width: 992px) {
+  .menu__template .menu__grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .menu__template .menu__grid .menu__template-block {
   display: grid;
   grid-gap: 20px;
@@ -307,7 +321,7 @@ footer ul li a .fas {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 70px;
+  height: 80px;
   border-radius: 20px;
   background: white;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
@@ -323,14 +337,15 @@ footer ul li a .fas {
 .menu__template .menu__grid .menu__template-block .menu__template-dish .dish_price {
   font-weight: bold;
 }
-.menu .button {
+
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin: 15px 0;
 }
-.menu .button button {
+.button button {
   background: linear-gradient(180deg, #FF79DA, #9356DC);
   padding: 10px 20px;
   border: none;
@@ -339,4 +354,39 @@ footer ul li a .fas {
   color: white;
   margin: 10px 0;
   cursor: pointer;
+}
+
+/*------- FOOTER -------*/
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 0 40px 20px;
+  width: 100%;
+}
+footer h3 {
+  font-family: "Shrikhand", cursive;
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 15px 0;
+}
+footer ul {
+  list-style-type: none;
+}
+@media screen and (min-width: 992px) {
+  footer ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+footer ul li {
+  padding: 5px 0;
+}
+footer ul li a {
+  text-decoration: none;
+  color: #F3F3F3;
+}
+footer ul li a .fas {
+  font-size: 15px;
+  padding-right: 5px;
 }/*# sourceMappingURL=style.css.map */
