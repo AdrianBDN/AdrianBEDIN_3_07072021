@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-$primary-color: #9356DC;
+$primary-color: #9356dc;
 $secondary-color: #FF79DA;
 $tertiary-color:  #99E2D0;
 
@@ -18,6 +18,67 @@ body {
 
 /*------------ HEADER ---------*/
 
+.loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: hsla(0,0%,100%,.9);
+    animation: loader 3s;
+    animation-delay: .25s;
+    animation-fill-mode: both;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        &__container {
+            display: flex;
+            width: 150px;
+            justify-content: space-between;
+        }
+        &__item {
+            height: 25px;
+            width: 25px;
+            border-radius: 25px;
+            animation: jump 1s;
+            animation-iteration-count: 1;
+        }
+        &__item-1 {
+            background: $primary-color;
+        }
+        &__item-2 {
+            background: $secondary-color;
+            animation-delay: .25s;
+        }
+        &__item-3 {
+            background: $tertiary-color;
+            animation-delay: .5s;
+        }
+
+}
+
+@keyframes loader {
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
+  } 
+  
+@keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(0.5rem);
+    }
+    75% {
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
 
 .header {
     height: 70px;
@@ -123,6 +184,9 @@ body {
                         border-radius: 25px;
                         position: relative;
                         box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 16%);
+                            &:hover {
+                                background-color: rgba(147, 86, 220, 0.7)
+                            }
                         @media screen and (min-width: 768px) {
                             width: 100%;
                             margin: 10px;
@@ -158,6 +222,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 40px 30px;
+    background: #f6f6f6;
         &__title {
             font-size: 25px;
             display: block;
@@ -169,7 +234,6 @@ body {
             grid-template-rows: repeat(4, 1fr);
             grid-template-columns: 1fr;
             grid-gap: 20px;
-            padding: 20px;
             @media screen and (min-width: 768px) {
                 grid-template-rows: 1fr 1fr;
                 grid-template-columns: 1fr 1fr;
@@ -220,9 +284,12 @@ body {
                                     padding: 10px;
                                         &-info {
                                             font-size: 18px;
-                                        }
+                                        }    
                                         &-name {
                                             font-weight: 700;
+                                        }
+                                        .fa-heart {
+                                            font-size: 25px;
                                         }
                                 }
                         }
@@ -230,12 +297,15 @@ body {
         }
 }               
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /*---------- RESTAURANTS PAGES-------- */
 
 
-.restaurants {
-    background: #F3F3F3;
-}
+
 
 .header__restaurants {
     position: relative;
@@ -285,8 +355,8 @@ body {
     border-radius: 30px 30px 0 0;
     background: #f6f6f6;
         &__template {
-            width: 100%;
             max-width: 1200px;
+            width: 100%;
                 &-header {
                     display: flex;
                     flex-direction: row;
@@ -299,6 +369,9 @@ body {
                         }
                         .fa-heart {
                             font-size: 25px;
+                                &:hover {
+                                    background: linear-gradient(180deg, $secondary-color, $primary-color);
+                                }
                         }
                 }
                 .menu__grid {
@@ -309,11 +382,22 @@ body {
                         grid-template-rows: 1fr;
                         grid-template-columns: repeat(3, 1fr);
                     }   .menu__template-block {
-                                display: grid;
-                                grid-gap: 20px;
-                                
+                                display: flex;
+                                flex-direction: column;
                                     h3 {
                                      text-transform: uppercase;
+                                     position: relative;
+                                     padding-bottom: 10px;
+                                     font-weight: lighter;
+                                        &::after {
+                                            content: "";
+                                            width: 3rem;
+                                            height: .25rem;
+                                            background-color: #99e2d0;
+                                            position: absolute;
+                                            left: 0;
+                                            bottom: 0;
+                                        }
                                     }
                                     .menu__template-dish {
                                         position: relative;
@@ -327,10 +411,12 @@ body {
                                         border-radius: 20px;
                                         background: white;
                                         box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-                                        display: flex;
-                                        justify-content: space-between;
-                                        align-items: center;
                                         padding: 0 15px;
+                                        margin: 15px 0;
+                                        animation: itemAppear 1s;
+                                        animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+                                        animation-fill-mode: both;
+                                        transform: scale(0);
                                             .dish__name h4 {
                                                 font-weight: bold;
                                                 font-size: 18px;
@@ -338,11 +424,57 @@ body {
                                             .dish_price {
                                                 font-weight: bold;
                                             }  
+                                            .dish_check {
+                                                background: $tertiary-color;
+                                                width: 20px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                transition-duration: .5s;
+
+                                            }
+                                    }
+                                    .delay-1 {
+                                        animation-delay: .1s;
+                                    }
+                                    .delay-2 {
+                                        animation-delay: .2s;
+                                    }
+                                    .delay-3 {
+                                        animation-delay: .3s;
+                                    }
+                                    .delay-4 {
+                                        animation-delay: .4s;
+                                    }
+                                    .delay-5 {
+                                        animation-delay: .5s;
+                                    }
+                                    .delay-6 {
+                                        animation-delay: .6s;
+                                    }
+                                    .delay-7 {
+                                        animation-delay: .7s;
+                                    }
+                                    .delay-8 {
+                                        animation-delay: .8s;
+                                    }
+                                    .delay-9 {
+                                        animation-delay: .9s;
                                     }
                             } 
                     } 
             } 
-    }                                           
+}   
+    
+    @keyframes itemAppear {
+        0% {
+          transform: scale(0)
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
     .button {
         display: flex;
         justify-content: center;
@@ -368,30 +500,28 @@ footer {
     color: white;
     padding: 0 40px 20px;
     width: 100%;
-            h3 {
-                font-family: 'Shrikhand', cursive;
-                font-weight: lighter;
-                font-size: 20px;
-                padding: 15px 0;
-            };
-            ul {
-                list-style-type: none;
-                @media screen and (min-width: 992px) {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-direction: row;
-                }
-                li {
-                    padding: 5px 0;
-                        a {
-                            text-decoration: none;
-                            color: #F3F3F3;
-                                .fas {
-                                    font-size: 15px;
-                                    padding-right: 5px;
-                                }
-                        }
-                }
-        }
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+                h3 {
+                    font-family: 'Shrikhand', cursive;
+                    font-weight: lighter;
+                    font-size: 20px;
+                    padding: 15px 0;
+                };
+                ul {
+                    list-style-type: none;
+                    li {
+                        padding: 5px 0;
+                            a {
+                                text-decoration: none;
+                                color: #F3F3F3;
+                                    .fas {
+                                        font-size: 15px;
+                                        padding-right: 5px;
+                                    }
+                            }
+                    }
+            }
+    }
 }
-
