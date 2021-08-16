@@ -17,8 +17,8 @@ body {
   left: 0;
   top: 0;
   background: rgba(255, 255, 255, 0.9);
-  -webkit-animation: loader 3s;
-          animation: loader 3s;
+  -webkit-animation: loader 2s;
+          animation: loader 2s;
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s;
   -webkit-animation-fill-mode: both;
@@ -206,7 +206,7 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
 }
 .usage__content .usage__steps-style:hover {
-  background-color: rgba(147, 86, 220, 0.7);
+  background: #f5edff;
 }
 @media screen and (min-width: 768px) {
   .usage__content .usage__steps-style {
@@ -260,7 +260,7 @@ body {
 }
 .restaurants__cards a {
   text-decoration: none;
-  color: black;
+  color: initial;
 }
 .restaurants__cards a .restaurant__card {
   position: relative;
@@ -312,12 +312,52 @@ body {
 .restaurants__cards a .restaurant__card .restaurant__block-name {
   font-weight: 700;
 }
-.restaurants__cards a .restaurant__card .restaurant__block .fa-heart {
-  font-size: 25px;
+.restaurants__cards a .restaurant__card .restaurant__block svg {
+  width: 25px;
+  fill: transparent;
+  stroke-width: 30;
+  stroke: black;
+  overflow: visible;
+}
+.restaurants__cards a .restaurant__card .restaurant__block .icon path {
+  fill: transparent;
+  stroke-width: 30;
+  stroke: black;
+  stroke-dasharray: 1560;
+  stroke-dashoffset: 0;
+}
+.restaurants__cards a .restaurant__card .restaurant__block .icon:hover path {
+  -webkit-animation: animate-heart 0.5s forwards;
+          animation: animate-heart 0.5s forwards;
+}
+@-webkit-keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 1560;
+    fill: url(#heart-fill);
+  }
+}
+@keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 1560;
+    fill: url(#heart-fill);
+  }
 }
 
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -329,6 +369,9 @@ body {
   align-items: center;
   height: 70px;
   width: 100%;
+  z-index: 10;
+  background: white;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 .header__restaurants .header__arrow {
   width: 50px;
@@ -353,9 +396,10 @@ body {
 
 .image {
   width: 100%;
-  height: 30vh;
+  height: 50vh;
 }
 .image img {
+  margin-top: -80px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -364,33 +408,66 @@ body {
 
 .menu {
   background: white;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.menu__template {
+  margin-top: -200px;
   padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
   border-radius: 30px 30px 0 0;
   background: #f6f6f6;
 }
-.menu__template {
-  max-width: 1200px;
-  width: 100%;
+@media screen and (min-width: 992px) {
+  .menu__template {
+    border-radius: 30px 30px 30px 30px;
+    margin-bottom: 100px;
+  }
 }
 .menu__template-header {
+  margin: 20px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
 }
 .menu__template-header h2 {
-  font-family: "Shrikhand", cursive;
-  font-size: 28px;
-}
-.menu__template-header .fa-heart {
   font-size: 25px;
+  font-family: "Shrikhand", cursive;
 }
-.menu__template-header .fa-heart:hover {
-  background: linear-gradient(180deg, #FF79DA, #9356dc);
+.menu__template-header svg {
+  width: 25px;
+  fill: transparent;
+  stroke-width: 30;
+  stroke: black;
+  overflow: visible;
+  cursor: pointer;
+}
+.menu__template-header .icon path {
+  fill: transparent;
+  stroke-width: 30;
+  stroke: black;
+  stroke-dasharray: 1560;
+  stroke-dashoffset: 0;
+}
+.menu__template-header .icon:hover path {
+  -webkit-animation: animate-heart 0.5s forwards;
+          animation: animate-heart 0.5s forwards;
+}
+@keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 1560;
+    fill: url(#heart-fill);
+  }
 }
 .menu__template .menu__grid {
   display: grid;
@@ -399,21 +476,21 @@ body {
 @media screen and (min-width: 992px) {
   .menu__template .menu__grid {
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
   }
 }
 .menu__template .menu__grid .menu__template-block {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 15px;
 }
-.menu__template .menu__grid .menu__template-block h3 {
-  text-transform: uppercase;
+.menu__template .menu__grid .menu_template-title h3 {
   position: relative;
+  font-weight: 400;
+  text-transform: uppercase;
   padding-bottom: 10px;
-  font-weight: lighter;
 }
-.menu__template .menu__grid .menu__template-block h3::after {
+.menu__template .menu__grid .menu_template-title h3::after {
   content: "";
   width: 3rem;
   height: 0.25rem;
@@ -422,7 +499,7 @@ body {
   left: 0;
   bottom: 0;
 }
-.menu__template .menu__grid .menu__template-block .menu__template-dish {
+.menu__template .menu__grid .menu__template-dish {
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -430,73 +507,137 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80px;
-  border-radius: 20px;
+  height: 60px;
+  border-radius: 15px;
   background: white;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-  padding: 0 15px;
-  margin: 15px 0;
-  -webkit-animation: itemAppear 1s;
-          animation: itemAppear 1s;
+  -webkit-animation: appearance 0.8s;
+          animation: appearance 0.8s;
   -webkit-animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
           animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   transform: scale(0);
 }
-.menu__template .menu__grid .menu__template-block .menu__template-dish .dish__name h4 {
-  font-weight: bold;
-  font-size: 18px;
-}
-.menu__template .menu__grid .menu__template-block .menu__template-dish .dish_price {
-  font-weight: bold;
-}
-.menu__template .menu__grid .menu__template-block .menu__template-dish .dish_check {
-  background: #99E2D0;
-  width: 20px;
+.menu__template .menu__grid .menu__template-dish .dish__name-price {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  transition-duration: 0.5s;
+  padding: 0 20px;
 }
-.menu__template .menu__grid .menu__template-block .delay-1 {
+.menu__template .menu__grid .menu__template-dish .dish__name-price .dish_name {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu__template .menu__grid .menu__template-dish .dish__name-price .dish_name h4, .menu__template .menu__grid .menu__template-dish .dish__name-price .dish_name p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__template .menu__grid .menu__template-dish .dish__name-price .dish_name h4, .menu__template .menu__grid .menu__template-dish .dish__name-price .dish_price {
+  font-weight: bold;
+}
+.menu__template .menu__grid .menu__template-dish .dish_check {
+  display: none;
+  position: absolute;
+  background: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  right: 0px;
+  padding: 0 15px;
+  height: 100%;
+}
+.menu__template .menu__grid .menu__template-dish .dish_check .fa-check-circle {
+  font-size: 30px;
+  color: white;
+  transform: rotate(180deg);
+  -webkit-animation: rotate 0.5s both;
+          animation: rotate 0.5s both;
+}
+.menu__template .menu__grid .menu__template-dish:hover .dish_price {
+  padding-right: 70px;
+  transition: 0.5s ease;
+}
+.menu__template .menu__grid .menu__template-dish:hover .dish_check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: slide 0.5s ease;
+          animation: slide 0.5s ease;
+  transform-origin: right;
+}
+@-webkit-keyframes slide {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(50px);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(50px);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu__template .menu__grid #delay-1 {
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
 }
-.menu__template .menu__grid .menu__template-block .delay-2 {
+.menu__template .menu__grid #delay-2 {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
-.menu__template .menu__grid .menu__template-block .delay-3 {
+.menu__template .menu__grid #delay-3 {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
-.menu__template .menu__grid .menu__template-block .delay-4 {
+.menu__template .menu__grid #delay-4 {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
-.menu__template .menu__grid .menu__template-block .delay-5 {
+.menu__template .menu__grid #delay-5 {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
-.menu__template .menu__grid .menu__template-block .delay-6 {
+.menu__template .menu__grid #delay-6 {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
-.menu__template .menu__grid .menu__template-block .delay-7 {
+.menu__template .menu__grid #delay-7 {
   -webkit-animation-delay: 0.7s;
           animation-delay: 0.7s;
 }
-.menu__template .menu__grid .menu__template-block .delay-8 {
+.menu__template .menu__grid #delay-8 {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
-.menu__template .menu__grid .menu__template-block .delay-9 {
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+@-webkit-keyframes appearance {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-
-@-webkit-keyframes itemAppear {
+@keyframes appearance {
   0% {
     transform: scale(0);
   }
@@ -505,14 +646,6 @@ body {
   }
 }
 
-@keyframes itemAppear {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .button {
   display: flex;
   justify-content: center;
@@ -561,4 +694,22 @@ footer .footer ul li a {
 footer .footer ul li a .fas {
   font-size: 15px;
   padding-right: 5px;
+}
+
+@-webkit-keyframes slideLeft {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(50px);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(50px);
+  }
 }/*# sourceMappingURL=style.css.map */

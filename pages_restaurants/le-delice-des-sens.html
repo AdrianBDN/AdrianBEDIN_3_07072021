@@ -27,45 +27,69 @@
     <!-- MAIN -->
 
     <div class="image">
-        <img src="../ressources/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
+        <img src="../ressources/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens" class="image">
     </div>
 
-    <section class="menu">
+
+    <main class="menu">
         <div class="menu__template">
             <div class="menu__template-header">
                 <h2>Le délice des sens</h2>
-                <i class="far fa-heart"></i>
+                <svg class="icon" viewBox="0 -28 512.00002 512" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heart-fill">
+                            <stop offset="0%" stop-color="#9356DC"></stop>
+                            <stop offset="100%" stop-color="#FF79DA"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path d="m471.382812 44.578125c-26.503906-28.746094-62.871093-44.578125-102.410156-44.578125-29.554687 0-56.621094 9.34375-80.449218 27.769531-12.023438 9.300781-22.917969 20.679688-32.523438 33.960938-9.601562-13.277344-20.5-24.660157-32.527344-33.960938-23.824218-18.425781-50.890625-27.769531-80.445312-27.769531-39.539063 0-75.910156 15.832031-102.414063 44.578125-26.1875 28.410156-40.613281 67.222656-40.613281 109.292969 0 43.300781 16.136719 82.9375 50.78125 124.742187 30.992188 37.394531 75.535156 75.355469 127.117188 119.3125 17.613281 15.011719 37.578124 32.027344 58.308593 50.152344 5.476563 4.796875 12.503907 7.4375 19.792969 7.4375 7.285156 0 14.316406-2.640625 19.785156-7.429687 20.730469-18.128907 40.707032-35.152344 58.328125-50.171876 51.574219-43.949218 96.117188-81.90625 127.109375-119.304687 34.644532-41.800781 50.777344-81.4375 50.777344-124.742187 0-42.066407-14.425781-80.878907-40.617188-109.289063zm0 0"/>
+                </svg>
             </div>
             <div class="menu__grid">
                 <div class="menu__template-block">
                     <div class="menu_template-title">
                         <h3>Entrées</h3>
                     </div>
-                    <div class="menu__template-dish">
-                        <div class="dish__name">
-                            <h4>Tartare de thon</h4>
-                            <p>Assaisonné au yuzu</p>
+                    <div class="menu__template-dish delayed">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Tartare de thon</h4>
+                                <p>Assaisonné au yuzu</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>25€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>25€</p>
-                        </div>
-                    </div>
-                    <div class="menu__template-dish delay-1">
-                        <div class="dish__name">
-                            <h4>Bouchée de homard croustillant</h4>
-                            <p>Et sa farandole de petits légumes</p>
-                        </div>
-                        <div class="dish_price">
-                            <p>35€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-2">
-                        <div class="dish__name">
-                            <h4>Velouté de cèpes</h4>
-                            <p>Aux truffes</p>
+                    <div class="menu__template-dish delayed" id="delay-1">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Bouchée de homard croustillant</h4>
+                                <p>Et sa farandole de petits légumes</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>35€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>20€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="menu__template-dish delayed" id="delay-2">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Velouté de cèpes</h4>
+                                <p>Aux truffes</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>20€</p>
+                            </div>
+                        </div>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -73,31 +97,46 @@
                     <div class="menu_template-title">
                         <h3>Plats</h3>
                     </div>
-                    <div class="menu__template-dish delay-3">
-                        <div class="dish__name">
-                            <h4>Poulet rôti aux herbes de Provence </h4>
-                            <p>Accompagné de sa ribambelle de légumes</p>
+                    <div class="menu__template-dish delayed" id="delay-3">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Poulet rôti aux herbes de Provence</h4>
+                                <p>Et sa crème de truffe</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>40€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>40€</p>
-                        </div>
-                    </div>
-                    <div class="menu__template-dish delay-4">
-                        <div class="dish__name">
-                            <h4>Langouste rôtie </h4>
-                            <p>Et sa crème de truffe</p>
-                        </div>
-                        <div class="dish_price">
-                            <p>35€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-5">
-                        <div class="dish__name">
-                            <h4>Côte de boeuf Angus</h4>
-                            <p>Et sa purée de panais</p>
+                    <div class="menu__template-dish delayed" id="delay-4">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Langouste rôtie </h4>
+                                <p>Et ses légumes de saison</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>35€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>44€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="menu__template-dish delayed" id="delay-5">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Côte de boeuf Angus</h4>
+                                <p>Et sa purée de panais</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>44€</p>
+                            </div>
+                        </div>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -105,31 +144,46 @@
                     <div class="menu_template-title">
                         <h3>Desserts</h3>
                     </div>
-                    <div class="menu__template-dish delay-6">
-                        <div class="dish__name">
-                            <h4>Farandole de desserts</h4>
-                            <p>Du chef</p>
+                    <div class="menu__template-dish delayed" id="delay-6">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Farandole de desserts</h4>
+                                <p>Du chef</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>18€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>18€</p>
-                        </div>
-                    </div>
-                    <div class="menu__template-dish delay-7">
-                        <div class="dish__name">
-                            <h4>Macaron au chocolat d'exception</h4>
-                            <p>Et glace à la vanille de Madagascar</p>
-                        </div>
-                        <div class="dish_price">
-                            <p>23€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-8">
-                        <div class="dish__name">
-                            <h4>Tiramisu </h4>
-                            <p>À la noisette</p>
+                    <div class="menu__template-dish delayed" id="delay-7">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Crème brûlée</h4>
+                                <p>Revisitée</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>22€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>22€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="menu__template-dish delayed" id="delay-8">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Tiramisu</h4>
+                                <p>À la noisette</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>23€</p>
+                            </div>
+                        </div>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -138,7 +192,7 @@
                 <button>Commander</button>
             </div>
         </div>
-    </section>
+    </main> 
 
     <!-- FOOTER -->
 

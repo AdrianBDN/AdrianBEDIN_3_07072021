@@ -25,7 +25,7 @@ body {
     left: 0;
     top: 0;
     background: hsla(0,0%,100%,.9);
-    animation: loader 3s;
+    animation: loader 2s;
     animation-delay: .25s;
     animation-fill-mode: both;
     z-index: 1000;
@@ -185,7 +185,7 @@ body {
                         position: relative;
                         box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 16%);
                             &:hover {
-                                background-color: rgba(147, 86, 220, 0.7)
+                                background: rgb(245,237,255);
                             }
                         @media screen and (min-width: 768px) {
                             width: 100%;
@@ -240,7 +240,7 @@ body {
             }
                 a {
                     text-decoration: none;
-                    color: black;
+                    color: initial;
                         .restaurant__card {
                             position: relative;
                             display: flex;
@@ -288,17 +288,46 @@ body {
                                         &-name {
                                             font-weight: 700;
                                         }
-                                        .fa-heart {
-                                            font-size: 25px;
+                                        svg {
+                                            width: 25px;
+                                            fill: transparent;
+                                            stroke-width: 30;
+                                            stroke: black;
+                                            overflow: visible;
                                         }
+                                        .icon path {
+                                            fill: transparent;
+                                            stroke-width: 30;
+                                            stroke: black;
+                                            stroke-dasharray: 1560;
+                                            stroke-dashoffset: 0;
+                                        }
+                                        .icon:hover path {
+                                            animation: animate-heart 0.5s forwards;
+                                        }
+                                        @keyframes animate-heart {
+                                            0% {
+                                              stroke-dashoffset: 0;
+                                            }
+                                            80% {
+                                              fill: transparent;
+                                            }
+                                            100% {
+                                              stroke-dashoffset: 1560;
+                                              fill: url(#heart-fill);
+                                            }
+                                        }
+
                                 }
                         }
+            
                 }
         }
 }               
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -314,6 +343,9 @@ body {
     align-items: center;
     height: 70px;
     width: 100%;
+    z-index: 10;
+    background: white;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
         .header__arrow {
             width: 50px;
             height: 50px;
@@ -338,8 +370,9 @@ body {
 
 .image {
     width: 100%;
-    height: 30vh;;
+    height: 50vh;
         img {
+            margin-top: -80px;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -348,30 +381,60 @@ body {
 
 .menu {
     background: white;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    border-radius: 30px 30px 0 0;
-    background: #f6f6f6;
         &__template {
-            max-width: 1200px;
+            margin-top: -200px;
+            padding: 0 20px;
             width: 100%;
+            max-width: 1200px;
+            border-radius: 30px 30px 0 0;
+            background: #f6f6f6;
+            @media screen and (min-width: 992px) {
+                border-radius: 30px 30px 30px 30px;
+                margin-bottom: 100px;
+            }
                 &-header {
+                    margin: 20px 0;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
-                    padding: 20px 0;
                         h2 {
-                            font-family: 'Shrikhand', cursive;
-                            font-size: 28px;
-                        }
-                        .fa-heart {
                             font-size: 25px;
-                                &:hover {
-                                    background: linear-gradient(180deg, $secondary-color, $primary-color);
-                                }
+                            font-family: 'Shrikhand', cursive;
+                        }
+                        svg {
+                            width: 25px;
+                            fill: transparent;
+                            stroke-width: 30;
+                            stroke: black;
+                            overflow: visible;
+                            cursor: pointer;
+                        }
+                        .icon path {
+                            fill: transparent;
+                            stroke-width: 30;
+                            stroke: black;
+                            stroke-dasharray: 1560;
+                            stroke-dashoffset: 0;
+                        }
+                        .icon:hover path {
+                            animation: animate-heart 0.5s forwards;
+                        }
+                        @keyframes animate-heart {
+                            0% {
+                              stroke-dashoffset: 0;
+                            }
+                            80% {
+                              fill: transparent;
+                            }
+                            100% {
+                              stroke-dashoffset: 1560;
+                              fill: url(#heart-fill);
+                            }
                         }
                 }
                 .menu__grid {
@@ -379,16 +442,18 @@ body {
                     grid-gap: 40px;
                     @media screen and (min-width: 992px) {
                         display: grid;
-                        grid-template-rows: 1fr;
                         grid-template-columns: repeat(3, 1fr);
-                    }   .menu__template-block {
-                                display: flex;
-                                flex-direction: column;
-                                    h3 {
-                                     text-transform: uppercase;
-                                     position: relative;
-                                     padding-bottom: 10px;
-                                     font-weight: lighter;
+                        grid-template-rows: 1fr;
+                    }
+                        .menu__template-block {
+                            display: grid;
+                            grid-gap: 15px;
+                            }
+                                .menu_template-title h3 {
+                                    position: relative;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                    padding-bottom: 10px;
                                         &::after {
                                             content: "";
                                             width: 3rem;
@@ -398,82 +463,126 @@ body {
                                             left: 0;
                                             bottom: 0;
                                         }
-                                    }
-                                    .menu__template-dish {
-                                        position: relative;
-                                        cursor: pointer;
-                                        overflow: hidden;
-                                        display: flex;
-                                        justify-content: space-between;
-                                        align-items: center;
-                                        width: 100%;
-                                        height: 80px;
-                                        border-radius: 20px;
-                                        background: white;
-                                        box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-                                        padding: 0 15px;
-                                        margin: 15px 0;
-                                        animation: itemAppear 1s;
-                                        animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
-                                        animation-fill-mode: both;
-                                        transform: scale(0);
-                                            .dish__name h4 {
-                                                font-weight: bold;
-                                                font-size: 18px;
+                                }
+                                .menu__template-dish {
+                                    position: relative;
+                                    cursor: pointer;
+                                    overflow: hidden;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 60px;
+                                    border-radius: 15px;
+                                    background: white;
+                                    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+                                    animation: appearance .8s;
+                                    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+                                    animation-fill-mode: both;
+                                    transform: scale(0);
+                                        .dish__name-price {
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            padding: 0 20px;
+                                                .dish_name {
+                                                    white-space: nowrap;
+                                                    overflow: hidden;
+                                                        h4, p {
+                                                            text-overflow: ellipsis;
+                                                            overflow: hidden;
+                                                        }
+                                                }
+                                                .dish_name h4, .dish_price {
+                                                    font-weight: bold;
+                                                }
+                                        }
+                                        .dish_check {
+                                            display: none;
+                                            position: absolute;
+                                            background: #99E2D0;
+                                            border-radius: 0 15px 15px 0;
+                                            right: 0px;
+                                            padding: 0 15px;
+                                            height: 100%; 
+                                                .fa-check-circle {
+                                                    font-size: 30px;
+                                                    color: white;
+                                                    transform: rotate(180deg);
+                                                    animation: rotate 0.5s both;
+                                                }                                      
+                                        }
+                                        &:hover .dish_price {
+                                            padding-right: 70px;
+                                            transition: 0.5s ease;
+                                        }
+                                        &:hover .dish_check {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            animation: slide 0.5s ease;
+                                            transform-origin: right;
+                                        }
+                                        @keyframes slide {
+                                            0% {
+                                                transform: scaleX(0);
                                             }
-                                            .dish_price {
-                                                font-weight: bold;
-                                            }  
-                                            .dish_check {
-                                                background: $tertiary-color;
-                                                width: 20px;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                transition-duration: .5s;
+                                            100% {
+                                                transform: scaleX(50px);
+                                            }
+                                        }
+                                        @keyframes rotate {
+                                            0% {
+                                                transform: rotate(0);
+                                            }
+                                            100% {
+                                                transform: rotate(360deg);
+                                            }
+                                        }
+                                }
 
-                                            }
+                                #delay-1 {
+                                    animation-delay: 0.1s;
+                                }
+                                #delay-2 {
+                                    animation-delay: 0.2s;
+                                }
+                                #delay-3 {
+                                    animation-delay: 0.3s;
+                                }
+                                #delay-4 {
+                                    animation-delay: 0.4s;
+                                }
+                                #delay-5 {
+                                    animation-delay: 0.5s;
+                                }
+                                #delay-6 {
+                                    animation-delay: 0.6s;
+                                }
+                                #delay-7 {
+                                    animation-delay: 0.7s;
+                                }
+                                #delay-8 {
+                                    animation-delay: 0.8s;
+                                }
+                                @keyframes appearance {
+                                    0% {
+                                        transform: scale(0);
                                     }
-                                    .delay-1 {
-                                        animation-delay: .1s;
+                                    100% {
+                                        transform: scale(1);
                                     }
-                                    .delay-2 {
-                                        animation-delay: .2s;
-                                    }
-                                    .delay-3 {
-                                        animation-delay: .3s;
-                                    }
-                                    .delay-4 {
-                                        animation-delay: .4s;
-                                    }
-                                    .delay-5 {
-                                        animation-delay: .5s;
-                                    }
-                                    .delay-6 {
-                                        animation-delay: .6s;
-                                    }
-                                    .delay-7 {
-                                        animation-delay: .7s;
-                                    }
-                                    .delay-8 {
-                                        animation-delay: .8s;
-                                    }
-                                    .delay-9 {
-                                        animation-delay: .9s;
-                                    }
-                            } 
-                    } 
-            } 
-}   
-    
-    @keyframes itemAppear {
-        0% {
-          transform: scale(0)
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
+                                }
+                        }
+        }    
+}
+
+     
+
+
+
+
 
     .button {
         display: flex;
@@ -492,6 +601,8 @@ body {
             cursor: pointer;
         }
     }
+
+    
         
 /*------- FOOTER -------*/
 
@@ -523,5 +634,15 @@ footer {
                             }
                     }
             }
+    }
+}
+
+
+@keyframes slideLeft {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(50px);
     }
 }
