@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../dist/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>A la française</title>
 </head>
 <body>
@@ -49,40 +49,46 @@
                     <div class="menu_template-title">
                         <h3>Entrées</h3>
                     </div>
-                    <div class="menu__template-dish">
-                        <div class="dish__name">
-                            <h4>Tartare de poulpe acidulé</h4>
-                            <p>Aux zestes d'orange</p>
+                    <div class="menu__template-dish delayed">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Tartare de poulpe acidulé</h4>
+                                <p>Aux zestes d'orange</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>25€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>25€</p>
-                        </div>
-                    </div>
-                    <div class="menu__template-dish delay-1">
-                        <div class="dish__name">
-                            <h4>Velouté de légumes d'antan</h4>
-                            <p>Carotte, panais, topinambour</p>
-                        </div>
-                        <div class="dish_price">
-                            <p>35€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-2">
-                        <div class="dish__name">
-                            <h4>Soupe à l'oignon</h4>
-                            <p>Revisitée</p>
+                    <div class="menu__template-dish delayed" id="delay-1">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Velouté de légumes d'antan</h4>
+                                <p>Carotte, panais, topinambour</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>35€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>20€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-3">
-                        <div class="dish__name">
-                            <h4>Foie gras de canard cuit entier</h4>
-                            <p>Confiture de figue et pain toasté</p>
+                    <div class="menu__template-dish delayed" id="delay-2">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Soupe à l'oignon</h4>
+                                <p>Revisitée</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>20€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>35€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -90,31 +96,46 @@
                     <div class="menu_template-title">
                         <h3>Plats</h3>
                     </div>
-                    <div class="menu__template-dish delay-4">
-                        <div class="dish__name">
-                            <h4>Coquilles Saint-Jacques</h4>
-                            <p>Accompagnées d'une purée de panais</p>
+                    <div class="menu__template-dish delayed" id="delay-3">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Coquilles Saint-Jacques</h4>
+                                <p>Accompagnées d'une purée de panais</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>40€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>40€</p>
-                        </div>
-                    </div>
-                    <div class="menu__template-dish delay-5">
-                        <div class="dish__name">
-                            <h4>Magret de canard</h4>
-                            <p>Et parmentier de pommes de terre</p>
-                        </div>
-                        <div class="dish_price">
-                            <p>35€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-6">
-                        <div class="dish__name">
-                            <h4>Pigeonneau d’Ille-et-Vilaine</h4>
-                            <p>Sur son lit de gnocchis aux légumes</p>
+                    <div class="menu__template-dish delayed" id="delay-4">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Magret de canard</h4>
+                                <p>Et parmentier de pommes de terre</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>35€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>44€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="menu__template-dish delayed" id="delay-5">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Pigeonneau d’Ille-et-Vilaine</h4>
+                                <p>Sur son lit de gnocchis aux légumes</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>44€</p>
+                            </div>
+                        </div>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -122,31 +143,46 @@
                     <div class="menu_template-title">
                         <h3>Desserts</h3>
                     </div>
-                    <div class="menu__template-dish delay-7">
-                        <div class="dish__name">
-                            <h4>Pétales de violettes glacés</h4>
-                            <p>Et purée de noisettes</p>
+                    <div class="menu__template-dish delayed" id="delay-6">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Pétales de violettes glacés</h4>
+                                <p>Et purée de noisettes</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>18€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>18€</p>
-                        </div>
-                    </div>
-                    <div class="menu__template-dish delay-8">
-                        <div class="dish__name">
-                            <h4>Fondant au chocolat</h4>
-                            <p>Revisité</p>
-                        </div>
-                        <div class="dish_price">
-                            <p>22€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="menu__template-dish delay-9">
-                        <div class="dish__name">
-                            <h4>Millefeuille croustillant</h4>
-                            <p>Myrtilles et pâte d’amande</p>
+                    <div class="menu__template-dish delayed" id="delay-7">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Fondant au chocolat</h4>
+                                <p>Revisité</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>22€</p>
+                            </div>
                         </div>
-                        <div class="dish_price">
-                            <p>23€</p>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="menu__template-dish delayed" id="delay-8">
+                        <div class="dish__name-price">
+                            <div class="dish_name">
+                                <h4>Millefeuille croustillant</h4>
+                                <p>Myrtilles et pâte d’amande</p>
+                            </div>
+                            <div class="dish_price">
+                                <p>22€</p>
+                            </div>
+                        </div>
+                        <div class="dish_check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,150 @@
+.image {
+    width: 100%;
+    height: 50vh;
+        img {
+            margin-top: -80px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+}
+
+.menu {
+    background: $white-color;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        &__template {
+            margin-top: -200px;
+            padding: 0 20px;
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 30px 30px 0 0;
+            background: $grey-color;
+            @media screen and (min-width: 992px) {
+                border-radius: 30px 30px 30px 30px;
+                margin-bottom: 100px;
+            }
+                &-header {
+                    margin: 20px 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                        h2 {
+                            font-size: 25px;
+                            font-family: 'Shrikhand', cursive;
+                        }
+                        svg {
+                            width: 25px;
+                            fill: transparent;
+                            stroke-width: 30;
+                            stroke: black;
+                            overflow: visible;
+                            cursor: pointer;
+                        }
+                        .icon path {
+                            fill: transparent;
+                            stroke-width: 30;
+                            stroke: black;
+                            stroke-dasharray: 1560;
+                            stroke-dashoffset: 0;
+                        }
+                        .icon:hover path {
+                            animation: animate-heart 0.5s forwards;
+                        }
+                }
+                .menu__grid {
+                    display: grid;
+                    grid-gap: 40px;
+                    @media screen and (min-width: 992px) {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: 1fr;
+                    }
+                        .menu__template-block {
+                            display: grid;
+                            grid-gap: 15px;
+                            }
+                                .menu_template-title h3 {
+                                    position: relative;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                    padding-bottom: 10px;
+                                        &::after {
+                                            content: "";
+                                            width: 3rem;
+                                            height: .25rem;
+                                            background-color: $tertiary-color;
+                                            position: absolute;
+                                            left: 0;
+                                            bottom: 0;
+                                        }
+                                }
+                                .menu__template-dish {
+                                    position: relative;
+                                    cursor: pointer;
+                                    overflow: hidden;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 60px;
+                                    border-radius: 15px;
+                                    background: $white-color;
+                                    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+                                    animation: appearance .8s;
+                                    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+                                    animation-fill-mode: both;
+                                    transform: scale(0);
+                                        .dish__name-price {
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            padding: 0 20px;
+                                                .dish_name {
+                                                    white-space: nowrap;
+                                                    overflow: hidden;
+                                                        h4, p {
+                                                            text-overflow: ellipsis;
+                                                            overflow: hidden;
+                                                        }
+                                                }
+                                                .dish_name h4, .dish_price {
+                                                    font-weight: bold;
+                                                }
+                                        }
+                                        .dish_check {
+                                            display: none;
+                                            position: absolute;
+                                            background: $tertiary-color;
+                                            border-radius: 0 15px 15px 0;
+                                            right: 0px;
+                                            padding: 0 15px;
+                                            height: 100%; 
+                                                .fa-check-circle {
+                                                    font-size: 30px;
+                                                    color: $white-color;
+                                                    transform: rotate(180deg);
+                                                    animation: rotate 0.5s both;
+                                                }                                      
+                                        }
+                                        &:hover .dish_price {
+                                            padding-right: 70px;
+                                            transition: 0.5s ease;
+                                        }
+                                        &:hover .dish_check {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            animation: slide 0.5s ease;
+                                            transform-origin: right;
+                                        }
+                                }
+                }
+        }
+}
+
+

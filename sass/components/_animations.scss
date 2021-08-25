@@ -1,0 +1,102 @@
+/* MAIN PAGE LOADER ANIMATION */
+@keyframes loader {
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
+  }
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(0.5rem);
+    }
+    75% {
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+/* MENU ITEMS APPEARANCE ANIMATION */
+
+@keyframes appearance {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#delay-1 {
+  animation-delay: 0.1s;
+}
+#delay-2 {
+  animation-delay: 0.2s;
+}
+#delay-3 {
+  animation-delay: 0.3s;
+}
+#delay-4 {
+  animation-delay: 0.4s;
+}
+#delay-5 {
+  animation-delay: 0.5s;
+}
+#delay-6 {
+  animation-delay: 0.6s;
+}
+#delay-7 {
+  animation-delay: 0.7s;
+}
+#delay-8 {
+  animation-delay: 0.8s;
+}
+
+
+
+/* MENU ITEMS CHECKBOX ANIMATIONS */
+@keyframes slideLeft {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(50px);
+    }
+}
+
+@keyframes slide {
+  0% {
+      transform: scaleX(0);
+  }
+  100% {
+      transform: scaleX(50px);
+  }
+}
+@keyframes rotate {
+  0% {
+      transform: rotate(0);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* HEART COLOR ANIMATION */
+
+@keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 1560;
+    fill: url(#heart-fill);
+  }
+}
