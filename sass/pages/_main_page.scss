@@ -102,25 +102,25 @@
 
 /* SERVICE USAGE SECTION*/
 
-.usage__content {
+.usage {
     padding: 40px 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-        .usage {
+        &__content {
             width: 95%;
             max-width: 1200px;
             display: flex;
             flex-direction: column;
-                &__title {
+                .usage_title {
                     display: block;
                     font-size: 25px;
                     font-weight: bold;
                     margin-bottom: 20px;
                 }
-                &__steps {
+                .usage__steps {
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
