@@ -37,7 +37,7 @@ body {
   -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
           box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
-.button button:hover:hover {
+.button button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 121, 218, 0.7)), to(rgba(147, 86, 220, 0.7)));
   background: -o-linear-gradient(top, rgba(255, 121, 218, 0.7), rgba(147, 86, 220, 0.7));
   background: linear-gradient(180deg, rgba(255, 121, 218, 0.7), rgba(147, 86, 220, 0.7));
@@ -438,30 +438,9 @@ footer .footer ul li a .fas {
   max-width: 350px;
   margin: 10px 0;
 }
-.search__container button {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: -o-linear-gradient(top, #ff79da, #9356dc);
-  background: linear-gradient(180deg, #ff79da, #9356dc);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 50px;
-  font-size: 18px;
-  color: white;
-  margin: 10px 0;
-  cursor: pointer;
-  -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-          box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-}
-.search__container button a {
+.search__container a {
   text-decoration: none;
   color: #FFF;
-}
-.search__container button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 121, 218, 0.7)), to(rgba(147, 86, 220, 0.7)));
-  background: -o-linear-gradient(top, rgba(255, 121, 218, 0.7), rgba(147, 86, 220, 0.7));
-  background: linear-gradient(180deg, rgba(255, 121, 218, 0.7), rgba(147, 86, 220, 0.7));
-  -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
 }
 
 /* SERVICE USAGE SECTION*/
