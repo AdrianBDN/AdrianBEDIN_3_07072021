@@ -162,8 +162,8 @@ body {
             transform: scaleX(0);
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(50px);
+            transform: scaleX(50px);
   }
 }
 @keyframes slideLeft {
@@ -172,8 +172,8 @@ body {
             transform: scaleX(0);
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(50px);
+            transform: scaleX(50px);
   }
 }
 @-webkit-keyframes slide {
@@ -182,8 +182,8 @@ body {
             transform: scaleX(0);
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(50px);
+            transform: scaleX(50px);
   }
 }
 @keyframes slide {
@@ -192,8 +192,8 @@ body {
             transform: scaleX(0);
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(50px);
+            transform: scaleX(50px);
   }
 }
 @-webkit-keyframes rotate {
@@ -391,6 +391,7 @@ footer .footer ul li a .fas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 70px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -400,8 +401,15 @@ footer .footer ul li a .fas {
   font-size: 18px;
   font-weight: bold;
 }
-.location i, .location p {
-  padding: 0 10px;
+.location i, .location input {
+  padding: 0 5px;
+}
+.location input {
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
 }
 
 /* SERVICE EXPLANATION SECTION */
